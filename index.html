@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Saintek Global Indonesia - Pengadaan & Service Elektronik</title>
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0A3967;
+            --primary-orange: #FF7A00;
+            --dark-gray: #222222;
+            --light-bg: #F4F7FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .btn-contact {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #e06c00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 60%, #062341);
+            color: var(--white);
+            padding: 160px 2rem 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #d1e3f8;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #e06c00;
+        }
+
+        /* Containers & Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background-color: var(--primary-orange);
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        /* Layanan */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-orange);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        /* Tentang Kami */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .about-features {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .about-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-features i {
+            color: var(--primary-orange);
+        }
+
+        /* Hubungi Kami / Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 2rem 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: #d1e3f8;
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #d1e3f8;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #a0c0e4;
+        }
+
+        /* Responsive UI */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <header>
+        <nav>
+            <!--div class="1. PT SAINTEK GLOBAL INDONESIA.png">
+                <i class="1. PT SAINTEK GLOBAL INDONESIA.png" style="color: var(--primary-orange);"></i>
+                PT SAINTEK <span>GLOBAL INDONESIA</span>
+            </div-->
+			
+			<img src="1. PT SAINTEK GLOBAL INDONESIA.png" alt="PT Saintek Global Indonesia" style="height: 80px;">
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#contact" class="btn-contact">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Solusi Pengadaan & Perawatan Elektronik Terpercaya</h1>
+        <p>PT Saintek Global Indonesia memberikan layanan pengadaan perangkat elektronik berkredibilitas tinggi serta pemeliharaan teknis profesional untuk perusahaan Anda.</p>
+        <a href="#contact" class="btn-primary">Konsultasi Sekarang</a>
+    </section>
+
+    <!-- Layanan Utama -->
+    <section class="container" id="services">
+        <div class="section-title">
+            <h2>Layanan Utama Kami</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-boxes-packing"></i>
+                <h3>Pengadaan Barang Elektronik</h3>
+                <p>Penyediaan berbagai unit dan perangkat elektronik industri, kantor, maupun komersial dengan jaminan kualitas terbaik.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-wrench"></i>
+                <h3>Service & Perbaikan</h3>
+                <p>Layanan perbaikan teknis cepat dan akurat untuk menangani kerusakan perangkat keras dan modul elektronik Anda.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-sliders"></i>
+                <h3>Maintenance Berkala</h3>
+                <p>Program pemeliharaan rutin untuk memastikan efisiensi, performa maksimal, dan memperpanjang usia pakai peralatan Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section class="about" id="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h3>Mitra Teknologi Terpercaya untuk Perusahaan Anda</h3>
+                <p>PT Saintek Global Indonesia berdedikasi untuk memberikan solusi teknologi komprehensif. Dikelola oleh tenaga ahli yang berpengalaman, kami memastikan kebutuhan operasional dan infrastruktur elektronik Anda berjalan tanpa hambatan.</p>
+                <ul class="about-features">
+                    <li><i class="fa-solid fa-circle-check"></i> Tenaga Teknisi Berpengalaman & Profesional</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Jaminan Garansi Layanan dan Sparepart Original</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Respon Cepat dan Dukungan Pelanggan Prioritas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Kontak -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>PT SAINTEK GLOBAL INDONESIA</h3>
+                <p>Mitra terbaik Anda dalam solusi pengadaan, perawatan, dan perbaikan perangkat elektronik industri maupun instansi.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Kontak Kami</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Alamat Kantor Perusahaan, 
+				<p><i class=" "></i> Jl. Padat Karya, RT.04/RW.No. 22, 
+				Muara Rapak, Kec. Balikpapan Utara, 
+				Kota Balikpapan, Kalimantan Timur
+				Indonesia
+</p>
+                <p><i class="fa-solid fa-phone"></i> +62 856-5089-9904</p>
+                <p><i class="fa-solid fa-envelope"></i> saintekglobalindonesia@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <li><a href="#services">• Electronic Procurement</a></li>
+                <li><a href="#services">• Technical Repair & Service</a></li>
+                <li><a href="#services">• Preventive Maintenance</a></li>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PT Saintek Global Indonesia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
